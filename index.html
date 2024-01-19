@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<!--Make a navigation bar , this nav bar will be used commonly for all other pages.
+  The navbar should include buttons for about us + contact us along with redirects to grubhub, doordash etc(use the logos instead of the name of the delivery service
+
+  Make a placeholder for an image (noodles maybe) and some text a little about the restaurant with a more button redirecting to the about us page.
+  Add a small button wherever seems appropriate that displays the buttons nd when clicked copies the phone number to the clipboard.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <style>
+        #header {
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 3%;
+            background-color: white;
+            width: 100%;
+        }
+
+        #logo {
+            background-color: red;
+            /* display: inline; */
+            max-width: 100px;
+            max-height: 100px;
+            position: absolute;
+        }
+
+        li {
+            display: inline;
+        }
+
+        #header h1 {
+            text-align: center;
+        }
+
+        .imgbox {
+            display: grid;
+            height: 100%;
+            width: 100%;
+        }
+
+        .center-fit {
+            width: 100%;
+            height: 100%;
+            /* max-height: 100vh; */
+            margin: auto;
+        }
+
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        .popup {
+            z-index: 0;
+            background-color: #ffffff;
+            /* width: 450px; */
+            width: 30%;
+            min-width: 300px;
+            padding: 30px 40px;
+            position: fixed;
+            transform: translate(-50%, -20%);
+            left: 50%;
+            top: 50%;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            opacity: 70%;
+        }
+
+        .popup button {
+            display: block;
+            margin: 0 0 20px auto;
+            background-color: transparent;
+            font-size: 30px;
+            color: #c5c5c5;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .popup p {
+            text-align: center;
+            margin: 20px 0;
+            line-height: 25px;
+        }
+
+        a {
+            display: block;
+            width: 150px;
+            margin: 10px auto;
+            text-align: center;
+            background-color: red;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 5px 0;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <img id="logo" src="static/icon.png" alt="insert here">
+        <h1>Pho Lan Noodles</h1>
+        <div id="nav">
+            <ul>
+                <li><a href="/about">ABOUT US</a></li>
+                <li><a href="/contact">CONTACT US</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content">
+        <!-- <img src="static/1511_Easy-Vietnamese-Pho-Noodle-Soup_002-1.jpg" alt="insert noodles">
+        <img src="static/banh+canh+vietnamese+thick+noodle+soup+recipe.jpg" alt="noodles"> -->
+        <div class="imgbox">
+            <img class="center-fit"
+                src="static/Bun-bo-Hue-Vietnamese-Vermicelli-Noodle-Soup-with-Sliced-Beef-XL-RECIPE0423-47194f9a6efb4695ac72c76798f6aa64.jpg">
+        </div>
+    </div>
+    <div class="popup">
+        <button id="close">&times;</button>
+        <h2>Our Restaurant</h2>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita distinctio fugiat alias iure qui, commodi
+            minima magni ullam aliquam dignissimos?
+        </p>
+        <p><a href="/about">Learn More</a></p>
+    </div>
+
+
+    <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+    <script>
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                1000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
